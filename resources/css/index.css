@@ -1,0 +1,24 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ffffff;
+        --background-color: #35363a;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 10vw;
+    font-family: 'Roboto', sans-serif;
+}
