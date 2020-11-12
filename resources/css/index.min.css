@@ -1,1 +1,0 @@
-@media (prefers-color-scheme:dark){:root{--text-color:#fff;--background-color:#35363a}}@media (prefers-color-scheme:light){:root{--text-color:#000;--background-color:#fff}}body{background-color:var(--background-color)}h1{color:var(--text-color);text-align:center;font-size:10vw;font-family:'Roboto',sans-serif}

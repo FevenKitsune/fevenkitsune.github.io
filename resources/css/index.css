@@ -19,6 +19,27 @@ body {
 h1 {
     color: var(--text-color);
     text-align: center;
-    font-size: 10vw;
+    font-size: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
     font-family: 'Roboto', sans-serif;
+}
+
+.hrefGithub {
+    padding: 0;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.svgGithub {
+    padding: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.divGithub {
+    height: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
+    display: block;
+    text-align: center;
+    margin: auto;
 }
