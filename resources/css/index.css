@@ -23,6 +23,10 @@ h1 {
     font-family: 'Roboto', sans-serif;
 }
 
+#headerText {
+    user-select: none;
+}
+
 .hrefGithub {
     padding: 0;
     height: 100%;
