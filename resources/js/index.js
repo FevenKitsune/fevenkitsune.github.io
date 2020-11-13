@@ -1,3 +1,7 @@
+/*
+fevenkitsune.page -> index.js
+*/
+
 function helloButton() {
   document.getElementById("headerText").style.color = getRandomColor();
 }
@@ -16,6 +20,7 @@ function getTextColor() {
   return getComputedStyle(document.documentElement).getPropertyValue("--text-color");
 }
 
+// Set SVG color based on text color.
 window.addEventListener('load', function () {
   // nightmare nightmare nightmare
   var svgGithub = document.querySelector(".svgGithub").contentDocument.getElementsByClassName("svgGithubPath");

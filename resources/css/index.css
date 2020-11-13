@@ -1,3 +1,7 @@
+/*
+fevenkitsune.page -> index.css
+*/
+
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #ffffff;
@@ -16,20 +20,23 @@ body {
     background-color: var(--background-color);
 }
 
-h1 {
+#headerText {
+    user-select: none;
     color: var(--text-color);
     text-align: center;
     font-size: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
     font-family: 'Roboto', sans-serif;
 }
 
-#headerText {
-    user-select: none;
+/* GitHub link */
+.divGithub {
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 .hrefGithub {
     padding: 0;
-    height: 100%;
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -37,13 +44,6 @@ h1 {
 
 .svgGithub {
     padding: 0;
-    height: 100%;
-    pointer-events: none;
-}
-
-.divGithub {
     height: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
-    display: block;
-    text-align: center;
-    margin: auto;
+    pointer-events: none;
 }
