@@ -18,27 +18,3 @@ body {
     font-size: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
     font-family: 'Roboto', sans-serif;
 }
-
-/* GitHub link */
-.divGithub {
-    display: block;
-    text-align: center;
-    margin: auto;
-}
-
-.hrefGithub {
-    padding: 0;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-}
-
-.githubLogo {
-    display: block;
-    margin: auto;
-    padding: 0;
-    width: 100%;
-  max-width: 20vw;
-  max-height: 20vh;
-    pointer-events: none;
-}
