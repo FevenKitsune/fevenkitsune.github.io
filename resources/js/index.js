@@ -16,17 +16,4 @@ function getRandomColor() {
   return color;
 }
 
-function getTextColor() {
-  return getComputedStyle(document.documentElement).getPropertyValue("--text-color");
-}
-
-// Set SVG color based on text color.
-window.addEventListener('load', function () {
-  // nightmare nightmare nightmare
-  var svgGithub = document.querySelector(".svgGithub").contentDocument.getElementsByClassName("svgGithubPath");
-  for (let pathItem of svgGithub) {
-    pathItem.setAttribute("fill", getTextColor());
-  }
-})
-
 document.getElementById("headerText").addEventListener("click", helloButton);
