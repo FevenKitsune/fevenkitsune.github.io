@@ -1,20 +1,11 @@
 /*
 fevenkitsune.page -> index.css
 */
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #ffffff;
-        --background-color: #35363a;
-    }
+:root {
+    --text-color: #ffffff;
+    --background-color: #35363a;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text-color: #000000;
-        --background-color: #ffffff;
-    }
-}
 
 body {
     background-color: var(--background-color);
@@ -42,7 +33,7 @@ body {
     z-index: 1;
 }
 
-.svgGithub {
+.githubLogo {
     padding: 0;
     height: calc(56px + (96 - 56) * (100vw - 360px)/(1080 - 360));
     pointer-events: none;
