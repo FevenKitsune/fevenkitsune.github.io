@@ -3,7 +3,7 @@ fevenkitsune.page -> index.js
 */
 
 function headerColor() {
-  document.getElementById("headerText").style.color = getRandomColor();
+  document.getElementById("header-text").style.color = getRandomColor();
 }
 
 function getRandomColor() {
@@ -16,4 +16,4 @@ function getRandomColor() {
   return color;
 }
 
-document.getElementById("headerText").addEventListener("click", headerColor);
+document.getElementById("header-text").addEventListener("click", headerColor);
