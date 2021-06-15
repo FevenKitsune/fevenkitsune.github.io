@@ -2,7 +2,7 @@
 fevenkitsune.page -> index.js
 */
 
-function helloButton() {
+function headerColor() {
   document.getElementById("headerText").style.color = getRandomColor();
 }
 
@@ -16,4 +16,4 @@ function getRandomColor() {
   return color;
 }
 
-document.getElementById("headerText").addEventListener("click", helloButton);
+document.getElementById("headerText").addEventListener("click", headerColor);
