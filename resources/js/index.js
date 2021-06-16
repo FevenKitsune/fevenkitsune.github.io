@@ -2,6 +2,10 @@
 fevenkitsune.page -> index.js
 */
 
+function init() {
+  document.getElementById("title-head").addEventListener("click", headerColor);
+}
+
 function headerColor() {
   document.getElementById("title-head").style.color = getRandomColor();
 }
@@ -16,4 +20,4 @@ function getRandomColor() {
   return color;
 }
 
-document.getElementById("title-head").addEventListener("click", headerColor);
+init();
