@@ -21,7 +21,7 @@ body {
     max-height: 4.615rem;
 }
 
-parent-flexbox {
+root-flexbox {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -32,7 +32,7 @@ parent-flexbox {
     border: 2px solid var(--accent-medium);
 }
 
-parent-flexbox social-block {
+root-flexbox social-block {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -41,7 +41,7 @@ parent-flexbox social-block {
     padding: 10px;
 }
 
-parent-flexbox title-block {
+root-flexbox title-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +50,7 @@ parent-flexbox title-block {
     padding: 10px;
 }
 
-parent-flexbox title-block header-text {
+root-flexbox title-block title-head {
     user-select: none;
     text-align: center;
     color: var(--text-color);
@@ -58,7 +58,7 @@ parent-flexbox title-block header-text {
     font-family: 'Roboto', sans-serif;
 }
 
-parent-flexbox title-block subtitle-text {
+root-flexbox title-block title-subhead {
     user-select: none;
     text-align: center;
     color: var(--text-color);
