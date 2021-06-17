@@ -17,10 +17,16 @@ class Rover {
         this.angleTranslationStartTime = 0;
         this.targetSpeed = 0;
     }
+
     setTargetAngle(newAngle) {
+        // TODO: Add checks for shortest path to next desired angle.
         if (this.targetAngle != newAngle) {
             let time = new Date();
-            this.targetAngle = newAngle;
+            if (Math.abs(this.angle - newAngle) > Math.abs(this.angle - newAngle + 360)) {
+                this.targetAngle = newAngle + 360;
+            } else {
+                this.targetAngle = newAngle;
+            }
             this.angleTranslationStartTime = time.getTime();
         }
     }
@@ -30,6 +36,13 @@ class Rover {
         // Note: This doesn't check if the animation finished. We assume the sinusoidal algoithm will reach the target angle in the set timespan.
         if (time.getTime() - this.angleTranslationStartTime < this.translateTime) {
             this.angle = ((this.targetAngle - this.angle) / 2) * -Math.cos((time.getTime() - this.angleTranslationStartTime) / ((this.translateTime * 2) / (2 * Math.PI))) + ((this.targetAngle + this.angle) / 2);
+        }
+    }
+
+    wrapAngle() {
+        if (this.angle == 354) {
+            this.angle = -6;
+            this.setTargetAngle(this.targetAngle - 360);
         }
     }
 }
@@ -45,11 +58,12 @@ function map(value, valueMinimum, valueMaximum, outputMinimum, outputMaximum) {
 }
 
 function draw() {
-    var cvs = document.getElementById('test-canvas');
-    var ctx = cvs.getContext('2d');
-    var time = new Date();
+    const cvs = document.getElementById('test-canvas');
+    const ctx = cvs.getContext('2d');
+    const time = new Date();
     roverA.updateAngle();
-    roverA.setTargetAngle(map(time.getSeconds(), 0, 60, 0, 360));
+    roverA.setTargetAngle(map(time.getSeconds(), 0, 59, 0, 354));
+    roverA.wrapAngle();
     cvs.style.width = '100%';
     cvs.style.height = '50vh';
     cvs.width = cvs.offsetWidth;
