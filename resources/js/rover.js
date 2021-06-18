@@ -3,57 +3,62 @@ fevenkitsune.page -> rover.js
 */
 
 class Rover {
-    roverWidth = 2;
-    roverLength = 150;
-    translateTime = 1000;
 
-    constructor(posx, posy, angle) {
-        this.posx = posx;
-        this.posy = posy;
+    constructor(positionX, positionY, angle, roverWidth, roverLength) {
+        // Position
+        this.positionX = positionX;
+        this.positionY = positionY;
         this.angle = angle;
-        this.accelerationAngle = 0;
-        this.accelerationSpeed = 0;
+        // Scale
+        this.roverWidth = roverWidth;
+        this.roverLength = roverLength;
+        // Animation target
         this.targetAngle = 0;
+        this.targetPositionX = 0;
+        this.targetPositionY = 0;
+        // Animation request delta
         this.angleTranslationStartTime = 0;
-        this.targetSpeed = 0;
+        this.coordinateTranslationStartTime = 0;
+        // Animation parameters
+        this.translateTime = 1000;
     }
 
     setTargetAngle(newAngle) {
-        // TODO: Add checks for shortest path to next desired angle.
-        if (this.targetAngle != newAngle) {
+        // Ensure new angle is unique from the previous one.
+        if (this.targetAngle !== newAngle) {
             let time = new Date();
-            if (Math.abs(this.angle - newAngle) > Math.abs(this.angle - newAngle + 360)) {
-                this.targetAngle = newAngle + 360;
-            } else {
-                this.targetAngle = newAngle;
-            }
+            this.targetAngle = newAngle;
             this.angleTranslationStartTime = time.getTime();
         }
     }
 
     updateAngle() {
+        /*
+        Note: This doesn't check if the animation finished.
+        We assume the sinusoidal algorithm will reach the target angle in the set timespan.
+         */
         let time = new Date();
-        // Note: This doesn't check if the animation finished. We assume the sinusoidal algoithm will reach the target angle in the set timespan.
         if (time.getTime() - this.angleTranslationStartTime < this.translateTime) {
             this.angle = ((this.targetAngle - this.angle) / 2) * -Math.cos((time.getTime() - this.angleTranslationStartTime) / ((this.translateTime * 2) / (2 * Math.PI))) + ((this.targetAngle + this.angle) / 2);
         }
     }
 
     wrapAngle() {
-        if (this.angle == 354) {
-            this.angle = -6;
-            this.setTargetAngle(this.targetAngle - 360);
+        // Ensures the shortest path is always "ahead".
+        if (Math.abs(this.angle - this.targetAngle) >= 180) {
+            this.angle-=360;
         }
     }
 }
 
-let roverA = new Rover(50, 50, 0);
+let roverA = new Rover(0, 0, 0, 2, 150);
 
 function init() {
     window.requestAnimationFrame(draw);
 }
 
 function map(value, valueMinimum, valueMaximum, outputMinimum, outputMaximum) {
+    // Simple range-mapping function.
     return (value - outputMinimum) / (valueMaximum - valueMinimum) * (outputMaximum - outputMinimum) + outputMinimum;
 }
 
@@ -61,31 +66,47 @@ function draw() {
     const cvs = document.getElementById('test-canvas');
     const ctx = cvs.getContext('2d');
     const time = new Date();
+
+    // Calculate frame and update rover parameters.
     roverA.updateAngle();
     roverA.setTargetAngle(map(time.getSeconds(), 0, 59, 0, 354));
     roverA.wrapAngle();
+
+    // Update canvas for dynamic resizing relative to webpage.
     cvs.style.width = '100%';
     cvs.style.height = '50vh';
     cvs.width = cvs.offsetWidth;
     cvs.height = cvs.offsetHeight;
+
+    // Update rover position and size for dynamic resizing relative to webpage.
     roverA.roverLength = cvs.height / 3;
+    roverA.positionX = cvs.width / 2;
+    roverA.positionY = cvs.height / 2;
+
+    // Initialize canvas for frame.
     ctx.globalCompositeOperation = 'destination-over';
     ctx.clearRect(0, 0, cvs.width, cvs.height);
+    // Save initial canvas position prior to translation.
     ctx.save();
-    //ctx.translate(roverA.posx, roverA.posy);
-    ctx.translate(cvs.width / 2, cvs.height / 2);
+    // Translate canvas to desired draw position
+    ctx.translate(roverA.positionX, roverA.positionY);
     ctx.rotate(roverA.angle * (Math.PI / 180));
+    // Draw center point.
     ctx.fillStyle = '#889adf';
     ctx.beginPath();
     ctx.arc(0, 0, 10, 0, 2 * Math.PI);
     ctx.fill();
+    // Draw rover.
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(-roverA.roverWidth / 2, -roverA.roverLength, roverA.roverWidth, roverA.roverLength);
+    // Draw clock background.
     ctx.fillStyle = '#363d59';
     ctx.beginPath();
     ctx.arc(0, 0, roverA.roverLength + 10, 0, 2 * Math.PI);
     ctx.fill();
+    // Restore initial translation.
     ctx.restore();
+    // Call next frame to be drawn.
     window.requestAnimationFrame(draw);
 }
 
