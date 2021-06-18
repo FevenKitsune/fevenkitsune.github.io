@@ -46,7 +46,7 @@ class Rover {
     wrapAngle() {
         // Ensures the shortest path is always "ahead".
         if (Math.abs(this.angle - this.targetAngle) >= 180) {
-            this.angle-=360;
+            this.angle -= 360;
         }
     }
 }
