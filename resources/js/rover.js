@@ -58,6 +58,7 @@ class Rover {
 }
 
 let roverA = new Rover(0, 0, 0, 2, 150);
+let roverB = new Rover(0, 0, 0, 4, 120);
 
 function init() {
     window.requestAnimationFrame(draw);
@@ -78,6 +79,10 @@ function draw() {
     roverA.setTargetAngle(map(time.getSeconds(), 0, 59, 0, 354));
     roverA.wrapAngle();
 
+    roverB.updateAngle();
+    roverB.setTargetAngle(map(time.getMinutes(), 0, 59, 0, 354));
+    roverB.wrapAngle();
+
     // Update canvas for dynamic resizing relative to webpage.
     cvs.style.width = '100%';
     cvs.style.height = '50vh';
@@ -88,30 +93,50 @@ function draw() {
     roverA.roverLength = cvs.height / 3;
     roverA.positionX = cvs.width / 2;
     roverA.positionY = cvs.height / 2;
+    roverB.roverLength = cvs.height / 3 - 10;
+    roverB.positionX = cvs.width / 2;
+    roverB.positionY = cvs.height / 2;
 
     // Initialize canvas for frame.
     ctx.globalCompositeOperation = 'destination-over';
     ctx.clearRect(0, 0, cvs.width, cvs.height);
+
     // Save initial canvas position prior to translation.
     ctx.save();
+
     // Translate canvas to desired draw position
     ctx.translate(roverA.positionX, roverA.positionY);
-    ctx.rotate(roverA.angle * (Math.PI / 180));
+
     // Draw center point.
     ctx.fillStyle = '#889adf';
     ctx.beginPath();
     ctx.arc(0, 0, 10, 0, 2 * Math.PI);
     ctx.fill();
-    // Draw rover.
-    ctx.fillStyle = '#ffffff';
+
+    // Draw roverA.
+    ctx.save();
+    ctx.rotate(roverA.angle * (Math.PI / 180));
+    ctx.fillStyle = '#B7313F';
     ctx.fillRect(-roverA.roverWidth / 2, -roverA.roverLength, roverA.roverWidth, roverA.roverLength);
+    ctx.restore();
+
+    // Draw roverB.
+    ctx.save();
+    ctx.rotate(roverB.angle * (Math.PI / 180));
+    ctx.fillStyle = '#FFFF';
+    ctx.fillRect(-roverB.roverWidth / 2, -roverB.roverLength, roverB.roverWidth, roverB.roverLength);
+    ctx.restore();
+
     // Draw clock background.
-    ctx.fillStyle = '#363d59';
+    ctx.strokeStyle = '#889adf';
+    ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(0, 0, roverA.roverLength + 10, 0, 2 * Math.PI);
-    ctx.fill();
+    ctx.stroke();
+
     // Restore initial translation.
     ctx.restore();
+
     // Call next frame to be drawn.
     window.requestAnimationFrame(draw);
 }
