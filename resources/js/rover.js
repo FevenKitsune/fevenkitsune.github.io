@@ -52,7 +52,6 @@ class Rover {
      */
     wrapAngle() {
         if (this.angle - this.targetAngle >= 180) {
-            console.log("RESET");
             this.angle -= 360;
         }
     }
