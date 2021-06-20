@@ -57,8 +57,8 @@ class Rover {
     }
 }
 
-let roverA = new Rover(0, 0, 0, 2, 150);
-let roverB = new Rover(0, 0, 0, 4, 120);
+let roverSeconds = new Rover(0, 0, 0, 2, 150);
+let roverMinutes = new Rover(0, 0, 0, 4, 120);
 
 function init() {
     window.requestAnimationFrame(draw);
@@ -75,13 +75,13 @@ function draw() {
     const time = new Date();
 
     // Calculate frame and update rover parameters.
-    roverA.updateAngle();
-    roverA.setTargetAngle(map(time.getSeconds(), 0, 59, 0, 354));
-    roverA.wrapAngle();
+    roverSeconds.updateAngle();
+    roverSeconds.setTargetAngle(map(time.getSeconds(), 0, 59, 0, 354));
+    roverSeconds.wrapAngle();
 
-    roverB.updateAngle();
-    roverB.setTargetAngle(map(time.getMinutes(), 0, 59, 0, 354));
-    roverB.wrapAngle();
+    roverMinutes.updateAngle();
+    roverMinutes.setTargetAngle(map(time.getMinutes(), 0, 59, 0, 354));
+    roverMinutes.wrapAngle();
 
     // Update canvas for dynamic resizing relative to webpage.
     cvs.style.width = '100%';
@@ -90,12 +90,12 @@ function draw() {
     cvs.height = cvs.offsetHeight;
 
     // Update rover position and size for dynamic resizing relative to webpage.
-    roverA.roverLength = cvs.height / 3;
-    roverA.positionX = cvs.width / 2;
-    roverA.positionY = cvs.height / 2;
-    roverB.roverLength = cvs.height / 3 - 10;
-    roverB.positionX = cvs.width / 2;
-    roverB.positionY = cvs.height / 2;
+    roverSeconds.roverLength = cvs.height / 3;
+    roverSeconds.positionX = cvs.width / 2;
+    roverSeconds.positionY = cvs.height / 2;
+    roverMinutes.roverLength = cvs.height / 3 - 10;
+    roverMinutes.positionX = cvs.width / 2;
+    roverMinutes.positionY = cvs.height / 2;
 
     // Initialize canvas for frame.
     ctx.globalCompositeOperation = 'destination-over';
@@ -105,7 +105,7 @@ function draw() {
     ctx.save();
 
     // Translate canvas to desired draw position
-    ctx.translate(roverA.positionX, roverA.positionY);
+    ctx.translate(roverSeconds.positionX, roverSeconds.positionY);
 
     // Draw center point.
     ctx.fillStyle = '#889adf';
@@ -113,25 +113,25 @@ function draw() {
     ctx.arc(0, 0, 10, 0, 2 * Math.PI);
     ctx.fill();
 
-    // Draw roverA.
+    // Draw roverSeconds.
     ctx.save();
-    ctx.rotate(roverA.angle * (Math.PI / 180));
+    ctx.rotate(roverSeconds.angle * (Math.PI / 180));
     ctx.fillStyle = '#B7313F';
-    ctx.fillRect(-roverA.roverWidth / 2, -roverA.roverLength, roverA.roverWidth, roverA.roverLength);
+    ctx.fillRect(-roverSeconds.roverWidth / 2, -roverSeconds.roverLength, roverSeconds.roverWidth, roverSeconds.roverLength);
     ctx.restore();
 
-    // Draw roverB.
+    // Draw roverMinutes.
     ctx.save();
-    ctx.rotate(roverB.angle * (Math.PI / 180));
+    ctx.rotate(roverMinutes.angle * (Math.PI / 180));
     ctx.fillStyle = '#FFFF';
-    ctx.fillRect(-roverB.roverWidth / 2, -roverB.roverLength, roverB.roverWidth, roverB.roverLength);
+    ctx.fillRect(-roverMinutes.roverWidth / 2, -roverMinutes.roverLength, roverMinutes.roverWidth, roverMinutes.roverLength);
     ctx.restore();
 
     // Draw clock background.
     ctx.strokeStyle = '#889adf';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.arc(0, 0, roverA.roverLength + 10, 0, 2 * Math.PI);
+    ctx.arc(0, 0, roverSeconds.roverLength + 10, 0, 2 * Math.PI);
     ctx.stroke();
 
     // Restore initial translation.
