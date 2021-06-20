@@ -23,8 +23,11 @@ class Rover {
         this.translateTime = 1000;
     }
 
+    /**
+     * Ensures the new angle is unique from the previous one. Sets the reference point for time delta and targetAngle.
+     * @param newAngle - Angle in degrees
+     */
     setTargetAngle(newAngle) {
-        // Ensure new angle is unique from the previous one.
         if (this.targetAngle !== newAngle) {
             let time = new Date();
             this.targetAngle = newAngle;
@@ -32,20 +35,24 @@ class Rover {
         }
     }
 
+    /**
+     * Calculates and sets angle of Rover using a cosinusoidal smoothing function. Utilizes the time delta (in ms) since
+     * the angle was requested by setTargetAngle(newAngle).
+     * Note that this function assumes the animation reaches the target angle within the desired timespan.
+     */
     updateAngle() {
-        /*
-        Note: This doesn't check if the animation finished.
-        We assume the sinusoidal algorithm will reach the target angle in the set timespan.
-         */
         let time = new Date();
         if (time.getTime() - this.angleTranslationStartTime < this.translateTime) {
             this.angle = ((this.targetAngle - this.angle) / 2) * -Math.cos((time.getTime() - this.angleTranslationStartTime) / ((this.translateTime * 2) / (2 * Math.PI))) + ((this.targetAngle + this.angle) / 2);
         }
     }
 
+    /**
+     * Ensures that the desired angle is under half a turn in front of the rover.
+     */
     wrapAngle() {
-        // Ensures the shortest path is always "ahead".
-        if (Math.abs(this.angle - this.targetAngle) >= 180) {
+        if (this.angle - this.targetAngle >= 180) {
+            console.log("RESET");
             this.angle -= 360;
         }
     }
