@@ -11,57 +11,43 @@ REM: [0.64, 0.8, 1, 1.25, 1.563, 1.953, 2.441, 3.052]
 
 body {
     background-color: var(--background);
-}
-
-#github-logo {
     display: flex;
-    margin: auto;
     height: 100vh;
-    max-height: 4.615rem;
-}
-
-root-flexbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 16px;
-    border: 2px solid var(--accent);
-}
-
-root-flexbox social-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px;
-}
-
-root-flexbox title-block {
-    display: flex;
+    width: 100vw;
+    margin: 0;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 10px;
+    justify-content: center;
+
 }
 
-root-flexbox title-block title-head {
-    user-select: none;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+title-head {
     text-align: center;
     color: var(--text-color);
     font-size: 3.052rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 
-root-flexbox title-block title-subhead {
-    user-select: none;
+title-subhead {
     text-align: center;
     color: var(--text-color);
     font-size: 1.563rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+title-link {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
 }
