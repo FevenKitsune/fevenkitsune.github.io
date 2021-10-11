@@ -9,26 +9,14 @@ REM: [0.64, 0.8, 1, 1.25, 1.563, 1.953, 2.441, 3.052]
     --highlight: #B7313F;
 }
 
-body {
+html, body {
     background-color: var(--background);
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
     margin: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
 }
 
 title-head {
