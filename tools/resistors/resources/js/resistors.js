@@ -5,7 +5,7 @@ class UserException {
     }
 }
 
-function get_resistance() {
+function build_values_from_bands() {
     if (arguments.length < 4) {
         throw new UserException('Cannot compute for less than 4 color bands.');
     } else if (arguments.length > 6) {
@@ -38,3 +38,10 @@ function get_resistance() {
 
     console.log(`Value: ${value}Ω\nMultiplier: ${multiplier}\nTolerance: ${tolerance}`);
 }
+
+
+// https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/
+const band_options = ['4 Bands', '5 Bands', '6 Bands'];
+const band_count_radios = document.querySelector("#band_count_radios");
+band_count_radios.innerHTML = band_options.map((band_option) => `<input type="radio" name="band_count" value="${band_option}" id="${band_option}">
+                                                                <label for="${band_option}">${band_option}</label>`).join(' ');

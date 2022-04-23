@@ -1,0 +1,52 @@
+/*
+fevenkitsune.page -> index.css
+REM: [0.64, 0.8, 1, 1.25, 1.563, 1.953, 2.441, 3.052]
+*/
+:root {
+    --text-color: #ffffff;
+    --background: #121212;
+    --accent: #889adf;
+    --highlight: #B7313F;
+}
+
+html, body {
+    background-color: var(--background);
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+band-selection {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+label {
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+}
+
+title-head {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 3.052rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+title-subhead {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.563rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+title-link {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+}

@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Feven Kitsune's development sandbox and homepage.">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
@@ -10,12 +11,26 @@
     <link rel="manifest" href="../../site.webmanifest">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#889adf">
-    <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="stylesheet" href="resources/css/resistors.css">
     <title>Resistors | Feven Kitsune</title>
 </head>
 
 <body>
-<script type="text/javascript" src="resources/js/resistors.js" async></script>
+    <band-selection id="band_count_radios">
+    </band-selection>
+    <band-selection>
+        <select id="band1">
+            <option value="0">0 - Black</option>
+        </select>
+        <select id="band2">
+            <option value="0">0 - Black</option>
+        </select>
+        <select id="band3">
+            <option value="0">0 - Black</option>
+        </select>
+    </band-selection>
+
+    <script type="text/javascript" src="resources/js/resistors.js" async></script>
 </body>
 
 </html>
