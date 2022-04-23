@@ -42,7 +42,7 @@ function build_values_from_bands() {
 
 // https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/
 const band_count_options = ['4 Bands', '5 Bands', '6 Bands'];
-const band_count_radios = document.querySelector("#band_count_radios");
-band_count_radios.innerHTML = band_count_options.map((count_option) =>
+const band_count_radio_flexbox = document.querySelector("#band_count_radio_flexbox");
+band_count_radio_flexbox.innerHTML = band_count_options.map((count_option) =>
     `<input type="radio" name="band_count" value="${count_option}" id="${count_option}">
      <label for="${count_option}">${count_option}</label>`).join(' ');
