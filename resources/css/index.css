@@ -9,7 +9,8 @@ REM: [0.64, 0.8, 1, 1.25, 1.563, 1.953, 2.441, 3.052]
     --highlight: #B7313F;
 }
 
-html, body {
+html,
+body {
     background-color: var(--background);
     display: flex;
     height: 100%;
@@ -19,23 +20,61 @@ html, body {
     justify-content: center;
 }
 
-title-head {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nav-item:hover {
+    background-color: var(--accent);
+}
+
+.title-head {
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
     color: var(--text-color);
     font-size: 3.052rem;
     font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
 }
 
-title-subhead {
+.title-subhead {
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
     color: var(--text-color);
     font-size: 1.563rem;
     font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
 }
 
 title-link {
     text-align: center;
     color: var(--text-color);
+    padding: 10px 15px;
     font-size: 1rem;
     font-family: 'Roboto Mono', monospace;
+}
+
+title-link:hover {
+    background-color: var(--accent);
 }
