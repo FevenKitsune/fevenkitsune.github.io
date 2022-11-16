@@ -14,24 +14,57 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#889adf">
-    <link rel="stylesheet" href="resources/css/index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .center-card {
+            min-height: 100vh;
+        }
+    </style>
     <title>Feven Kitsune</title>
 </head>
 
-<body>
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li class="nav-item"><a href="demos/rover/rover.html">Rover</a></li>
-            <li class="nav-item"><a href="#">Forum</a></li>
-            <li class="nav-item"><a href="#">News</a></li>
-            <li class="nav-item"><a href="#">Sign in</a></li>
-        </ul>
-    </nav>
-    <h1 class="title-head" id="title-head">Will Stewart</h1>
-    <h2 class="title-subhead">Python Developer</h2>
-    <br>
-    <a class="nav-item" href="https://github.com/fevenkitsune" target="_blank">GitHub</a>
-    <script type="text/javascript" src="resources/js/index.js" async></script>
+<body class="w3-theme-dark">
+    <div class="w3-top">
+        <div class="w3-bar w3-light-grey">
+            <a href="#" class="w3-bar-item w3-button">Home</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">HTML Experiments</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="demos/rover/rover.html" class="w3-bar-item w3-button">Rover</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-card w3-display-container" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <div class="w3-card w3-light-grey w3-animate-opacity">
+                <header class="w3-container w3-center">
+                    <h1>WILL STEWART</h1>
+                </header>
+
+                <div class="w3-container w3-center">
+                    <p>Python Developer</p>
+                </div>
+
+                <div class="w3-container w3-center">
+                    <a href="https://github.com/FevenKitsune" class="w3-button">GitHub</a>
+                    <a href="https://www.linkedin.com/in/william-stewart-22b012171/" class="w3-button">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
