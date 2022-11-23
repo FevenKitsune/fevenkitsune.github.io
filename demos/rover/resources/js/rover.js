@@ -59,6 +59,7 @@ class Rover {
 
 let roverSeconds = new Rover(0, 0, 0, 2, 150);
 let roverMinutes = new Rover(0, 0, 0, 4, 120);
+let roverHours = new Rover(0, 0, 0, 6, 80);
 
 function init() {
     window.requestAnimationFrame(draw);
@@ -83,19 +84,31 @@ function draw() {
     roverMinutes.setTargetAngle(map(time.getMinutes(), 0, 59, 0, 354));
     roverMinutes.wrapAngle();
 
+    roverHours.updateAngle();
+    roverHours.setTargetAngle(map(time.getHours() % 12 || 12, 0, 12, 0, 360));
+    roverHours.wrapAngle();
+
     // Update canvas for dynamic resizing relative to webpage.
-    cvs.style.width = '100%';
-    cvs.style.height = '50vh';
-    cvs.width = cvs.offsetWidth;
-    cvs.height = cvs.offsetHeight;
+    //cvs.style.width = '100%';
+    //cvs.style.height = '50vh';
+    //cvs.width = cvs.offsetWidth;
+    //cvs.height = cvs.offsetHeight;
+
+    cvs.width = (Math.min(window.innerWidth, window.innerHeight) / 3) * 2;
+    cvs.height = (Math.min(window.innerWidth, window.innerHeight) / 3) * 2;
 
     // Update rover position and size for dynamic resizing relative to webpage.
     roverSeconds.roverLength = cvs.height / 3;
     roverSeconds.positionX = cvs.width / 2;
     roverSeconds.positionY = cvs.height / 2;
+    
     roverMinutes.roverLength = cvs.height / 3 - 10;
     roverMinutes.positionX = cvs.width / 2;
     roverMinutes.positionY = cvs.height / 2;
+
+    roverHours.roverLength = cvs.height / 3 - 20;
+    roverHours.positionX = cvs.width / 2;
+    roverHours.positionY = cvs.height / 2;
 
     // Initialize canvas for frame.
     ctx.globalCompositeOperation = 'destination-over';
@@ -125,6 +138,13 @@ function draw() {
     ctx.rotate(roverMinutes.angle * (Math.PI / 180));
     ctx.fillStyle = '#FFFF';
     ctx.fillRect(-roverMinutes.roverWidth / 2, -roverMinutes.roverLength, roverMinutes.roverWidth, roverMinutes.roverLength);
+    ctx.restore();
+
+    // Draw roverHours.
+    ctx.save();
+    ctx.rotate(roverHours.angle * (Math.PI / 180));
+    ctx.fillStyle = '#FFFF';
+    ctx.fillRect(-roverHours.roverWidth / 2, -roverHours.roverLength, roverHours.roverWidth, roverHours.roverLength);
     ctx.restore();
 
     // Draw clock background.
