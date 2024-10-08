@@ -5,8 +5,10 @@ body {
 
 body {
     max-width: 1200px;
+    font-family: monospace;
     margin: 0 auto;
     padding: 0;
+    background-color: black;
 }
 
 .container {
