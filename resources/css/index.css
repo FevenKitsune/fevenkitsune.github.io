@@ -1,80 +1,39 @@
-/*
-fevenkitsune.page -> index.css
-REM: [0.64, 0.8, 1, 1.25, 1.563, 1.953, 2.441, 3.052]
-*/
-:root {
-    --text-color: #ffffff;
-    --background: #121212;
-    --accent: #889adf;
-    --highlight: #B7313F;
-}
-
-html,
 body {
-    background-color: var(--background);
-    display: flex;
-    height: 100%;
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: black;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #AAAAAA;
 }
 
-.nav-links {
-    display: flex;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-item {
+li.navitem {
+    float: left;
     display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1rem;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #CCCCCC;
 }
 
-.nav-item:hover {
-    background-color: var(--accent);
+li a { /* text */
+    padding: 8px;
 }
 
-.title-head {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    color: var(--text-color);
-    font-size: 3.052rem;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: normal;
+li a, .dropbtn {
+    display: inline-block;
 }
 
-.title-subhead {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    color: var(--text-color);
-    font-size: 1.563rem;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: normal;
+.dropdown-content {
+    display: none; /* hides dropdown content on load */
+    position: absolute; /* prevents rest of navbar from being moved */
 }
 
-title-link {
-    text-align: center;
-    color: var(--text-color);
-    padding: 10px 15px;
-    font-size: 1rem;
-    font-family: 'Roboto Mono', monospace;
+.dropdown-content a {
+    display: block; /* makes dropdown content vertical */
+    background-color: #DDDDDD;
 }
 
-title-link:hover {
-    background-color: var(--accent);
+.dropdown:hover .dropdown-content {
+    display: block;
 }

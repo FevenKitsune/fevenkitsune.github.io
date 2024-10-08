@@ -4,76 +4,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-    </style>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#889adf">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        .center-card {
-            min-height: 100vh;
-        }
-    </style>
-    <title>Feven Kitsune</title>
+    <link rel="stylesheet" href="resources/css/index.css">
+    <title>Feven Kitsune</title> 
 </head>
+<body>
+<nav>
+<ul class="navbar">
+    <li class="navitem"><a href="#">Home</a></li>
+    <li class="dropdown navitem">
+	<a href="javascript:void(0)" class="dropbtn">HTML Experiments</a>
+	<div class="dropdown-content">
+	    <a href="#">Canvas Clock</a>
+	</div>
+    </li>
+    <li class="dropdown navitem">
+	<a href="javascript:void(0)" class="dropbtn">Fox Utilities</a>
+	<div class="dropdown-content">
+	    <a href="#">GitHub</a>
+	    <a href="#">Privacy Policy</a>
+	    <a href="#">Terms of Service</a>
+	</div>
+    </li>
+</ul>
+</nav>
 
-<body class="w3-theme-dark">
-    <div class="w3-top">
-        <div class="w3-bar w3-light-grey">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">HTML Experiments</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="demos/clock" class="w3-bar-item w3-button">Canvas Clock</a>
-                </div>
-            </div>
+<footer>
+<div class="socials-content">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+</div>
+</footer>
 
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Fox Utilities</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="https://github.com/FevenKitsune/Fox-Utilities" class="w3-bar-item w3-button">GitHub</a>
-                    <a href="fox-utilities/privacy-policy" class="w3-bar-item w3-button">Privacy Policy</a>
-                    <a href="fox-utilities/terms-of-service" class="w3-bar-item w3-button">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="center-card w3-display-container" id="home">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <div class="w3-card w3-light-grey w3-animate-opacity">
-                <header class="w3-container w3-center">
-                    <h1>WILL STEWART</h1>
-                </header>
-
-                <div class="w3-container w3-center">
-                    <p>Developer</p>
-                </div>
-
-                <div class="w3-container w3-center">
-                    <a href="https://github.com/FevenKitsune" class="w3-button">GitHub</a>
-                    <a href="https://www.linkedin.com/in/william-stewart-22b012171/" class="w3-button">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
-
 </html>
