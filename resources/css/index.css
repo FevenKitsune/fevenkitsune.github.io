@@ -1,7 +1,6 @@
 /*
-body {
-    background-color: black;
-}*/
+They lay CSS upon us, and Jesus wept
+*/
 
 body {
     max-width: 1200px;
@@ -18,8 +17,16 @@ body {
 
 .left-column {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: #f0f0f0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .main-content {
@@ -28,19 +35,26 @@ body {
     background-color: bisque;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .left-column {
-        order: 0;
-    }
-}
-
 .info-card {
+    display: flex;
+    flex-direction: column;
     background-color: aquamarine;
     text-align: center;
+    flex: 2;
+}
+
+.nametag-socials {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+}
+
+.avatar {
+    flex: 1;
+}
+
+.info-card > h1 {
+    flex: 3;
 }
 
 .social-container {
@@ -48,7 +62,40 @@ body {
     justify-content: center;
 }
 
+
 .social-container > a {
     flex-grow: 1;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column {
+        flex-direction: column;
+        order: 0;
+        justify-content: left;
+    }
+
+    .social-container {
+        flex-direction: row;
+    }
+
+    .info-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 576px) {
+    .nametag-socials {
+        flex: 2.5;
+    }
+}
+
+@media (max-width: 384px) {
+    .nametag-socials {
+        flex: 1.5;
+    }
 }
