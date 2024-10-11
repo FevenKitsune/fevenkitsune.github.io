@@ -2,22 +2,21 @@
 fevenkitsune.page -> index.js
 */
 
-function init() {
-    document.getElementById("title-head").addEventListener("click", headerColor);
-}
+var accordion = document.getElementsByClassName("accordion");
+var i;
 
-function headerColor() {
-    document.getElementById("title-head").style.color = getRandomColor();
-}
+for (i = 0; i < accordion.length; i++) {
+    accordion[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+         *  to highlight the button that controls the panel */
+        this.classList.toggle("active");
 
-function getRandomColor() {
-    // https://stackoverflow.com/questions/1484506/random-color-generator
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "flex") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "flex";
+        }
+    });
 }
-
-init();

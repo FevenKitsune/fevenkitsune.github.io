@@ -4,10 +4,21 @@ They lay CSS upon us, and Jesus wept
 
 body {
     max-width: 1200px;
-    font-family: monospace;
     margin: 0 auto;
     padding: 0;
     background-color: black;
+}
+
+body, input, button, select, option, textarea {
+    font-family: monospace;
+}
+
+body {
+    font-size: 100%;
+}
+
+input, button, select, option, textarea {
+    font-size: 100%;
 }
 
 .container {
@@ -40,6 +51,7 @@ body {
     flex-direction: column;
     background-color: aquamarine;
     text-align: center;
+    margin-bottom: 15px;
     flex: 2;
 }
 
@@ -66,6 +78,45 @@ body {
 .social-container > a {
     flex-grow: 1;
     text-align: center;
+}
+
+.social-img {
+    scale: 75%;
+}
+
+.navroot-content {
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.nav-button {
+    padding: 10px 6px;
+    text-align: left;
+    flex: 1;
+    cursor: pointer;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+}
+
+.accordion:after {
+    content: '\002B';
+    float: right;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.indent-5 {
+    margin-left: 5%;
+}
+
+.indent-10 {
+    margin-left: 10%;
 }
 
 @media (max-width: 768px) {
