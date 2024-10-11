@@ -2,22 +2,54 @@
 They lay CSS upon us, and Jesus wept
 */
 
+:root {
+/** Dark theme primary colors */
+--color-primary-a0: #afa3d7;
+--color-primary-a10: #b8addc;
+--color-primary-a20: #c1b7e0;
+--color-primary-a30: #cac1e4;
+--color-primary-a40: #d3cbe9;
+--color-primary-a50: #dbd5ed;
+
+/** Dark theme surface colors */
+--color-surface-a0: #121212;
+--color-surface-a10: #282828;
+--color-surface-a20: #3f3f3f;
+--color-surface-a30: #575757;
+--color-surface-a40: #717171;
+--color-surface-a50: #8b8b8b;
+
+/** Dark theme mixed surface colors */
+--color-surface-mixed-a0: #201f23;
+--color-surface-mixed-a10: #353438;
+--color-surface-mixed-a20: #4b4a4d;
+--color-surface-mixed-a30: #626164;
+--color-surface-mixed-a40: #7a797c;
+--color-surface-mixed-a50: #939395;
+}
+/** Examples */
+.bg-primary {
+    color: var(--color-primary-a50);
+    background-color: var(--color-surface-a0);
+}
+
 body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
-    background-color: black;
+    background-color: var(--color-surface-a0);
 }
 
-body, input, button, select, option, textarea {
+body, input, button, select, option, textarea, summary {
     font-family: monospace;
+    color: white;
 }
 
 body {
     font-size: 100%;
 }
 
-input, button, select, option, textarea {
+input, button, select, option, textarea, summary {
     font-size: 100%;
 }
 
@@ -27,38 +59,46 @@ input, button, select, option, textarea {
 }
 
 .left-column {
-    flex: 1;
+    background-color: var(--color-surface-a10);
+    border-radius: 12px 0 0 12px;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    padding: 20px;
-    background-color: #f0f0f0;
+    margin: 6px 0 6px 6px;
+    padding: 12px;
 }
 
 .avatar-img {
-    width: 100%;
+    border-radius: 12px 12px 0 0;
     height: 100%;
     object-fit: cover;
+    width: 100%;
 }
 
 .main-content {
+    background-color: var(--color-surface-a20);
+    border-radius: 0 12px 12px 0;
     flex: 3;
-    padding: 20px;
-    background-color: bisque;
+    margin: 6px 6px 6px 0;
+    padding: 16px;
 }
 
 .info-card {
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-primary-a0);
     display: flex;
-    flex-direction: column;
-    background-color: aquamarine;
     text-align: center;
-    margin-bottom: 15px;
     flex: 2;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .nametag-socials {
     display: flex;
-    flex-direction: column;
     flex: 4;
+    flex-direction: column;
 }
 
 .avatar {
@@ -80,35 +120,43 @@ input, button, select, option, textarea {
     text-align: center;
 }
 
-.social-img {
+.social-img > img {
     scale: 75%;
+    padding: 0px;
+}
+
+.social-img {
+    margin: 6px;
+    background-color: transparent;
+    transition: 0.2s background-color linear;
+    border-radius: 6px;
+}
+.social-img:hover {
+    background-color: var(--color-surface-a20);
 }
 
 .navroot-content {
-    display: none;
-    overflow: hidden;
+    display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .nav-button {
+    background-color: transparent;
+    transition: 0.2s background-color linear;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: var(--color-primary-a0);
+    color: white;
+    cursor: pointer;
+    flex: 1;
     padding: 10px 6px;
     text-align: left;
-    flex: 1;
-    cursor: pointer;
-    border: 1px outset buttonborder;
-    border-radius: 3px;
-    color: buttontext;
-    background-color: buttonface;
     text-decoration: none;
 }
 
-.accordion:after {
-    content: '\002B';
-    float: right;
-}
-
-.active:after {
-    content: "\2212";
+.nav-button:hover {
+    background-color: var(--color-surface-a20);
 }
 
 .indent-5 {
@@ -125,9 +173,16 @@ input, button, select, option, textarea {
     }
 
     .left-column {
+        border-radius: 12px 12px 0 0;
         flex-direction: column;
-        order: 0;
         justify-content: left;
+        margin: 6px 6px 0px 6px;
+        order: 0;
+    }
+
+    .main-content {
+        border-radius: 0 0 12px 12px;
+        margin: 0px 6px 6px 6px;
     }
 
     .social-container {
@@ -136,6 +191,10 @@ input, button, select, option, textarea {
 
     .info-card {
         flex-direction: row;
+    }
+
+    .avatar-img {
+        border-radius: 12px 0 0 12px;
     }
 }
 
