@@ -78,7 +78,7 @@ input, button, select, option, textarea, summary {
 .main-content {
     background-color: var(--color-surface-a20);
     border-radius: 0 12px 12px 0;
-    flex: 3;
+    flex: 4;
     margin: 6px 6px 6px 0;
     padding: 16px;
 }
