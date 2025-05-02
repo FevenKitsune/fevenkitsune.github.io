@@ -3,29 +3,29 @@ They lay CSS upon us, and Jesus wept
 */
 
 :root {
-/** Dark theme primary colors */
---color-primary-a0: #afa3d7;
---color-primary-a10: #b8addc;
---color-primary-a20: #c1b7e0;
---color-primary-a30: #cac1e4;
---color-primary-a40: #d3cbe9;
---color-primary-a50: #dbd5ed;
+    /** Dark theme primary colors */
+    --color-primary-a0: #afa3d7;
+    --color-primary-a10: #b8addc;
+    --color-primary-a20: #c1b7e0;
+    --color-primary-a30: #cac1e4;
+    --color-primary-a40: #d3cbe9;
+    --color-primary-a50: #dbd5ed;
 
-/** Dark theme surface colors */
---color-surface-a0: #121212;
---color-surface-a10: #282828;
---color-surface-a20: #3f3f3f;
---color-surface-a30: #575757;
---color-surface-a40: #717171;
---color-surface-a50: #8b8b8b;
+    /** Dark theme surface colors */
+    --color-surface-a0: #121212;
+    --color-surface-a10: #282828;
+    --color-surface-a20: #3f3f3f;
+    --color-surface-a30: #575757;
+    --color-surface-a40: #717171;
+    --color-surface-a50: #8b8b8b;
 
-/** Dark theme mixed surface colors */
---color-surface-mixed-a0: #201f23;
---color-surface-mixed-a10: #353438;
---color-surface-mixed-a20: #4b4a4d;
---color-surface-mixed-a30: #626164;
---color-surface-mixed-a40: #7a797c;
---color-surface-mixed-a50: #939395;
+    /** Dark theme mixed surface colors */
+    --color-surface-mixed-a0: #201f23;
+    --color-surface-mixed-a10: #353438;
+    --color-surface-mixed-a20: #4b4a4d;
+    --color-surface-mixed-a30: #626164;
+    --color-surface-mixed-a40: #7a797c;
+    --color-surface-mixed-a50: #939395;
 }
 /** Examples */
 .bg-primary {
@@ -40,7 +40,13 @@ body {
     background-color: var(--color-surface-a0);
 }
 
-body, input, button, select, option, textarea, summary {
+body,
+input,
+button,
+select,
+option,
+textarea,
+summary {
     font-family: monospace;
     color: white;
 }
@@ -49,7 +55,12 @@ body {
     font-size: 100%;
 }
 
-input, button, select, option, textarea, summary {
+input,
+button,
+select,
+option,
+textarea,
+summary {
     font-size: 100%;
 }
 
@@ -66,6 +77,10 @@ input, button, select, option, textarea, summary {
     flex-direction: column;
     margin: 6px 0 6px 6px;
     padding: 12px;
+}
+
+.spacer {
+    flex-grow: 1;
 }
 
 .avatar-img {
@@ -113,7 +128,6 @@ input, button, select, option, textarea, summary {
     display: flex;
     justify-content: center;
 }
-
 
 .social-container > a {
     flex-grow: 1;
