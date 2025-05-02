@@ -67,6 +67,7 @@ summary {
 .container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
 }
 
 .left-column {
@@ -77,10 +78,6 @@ summary {
     flex-direction: column;
     margin: 6px 0 6px 6px;
     padding: 12px;
-}
-
-.spacer {
-    flex-grow: 2;
 }
 
 .avatar-img {
