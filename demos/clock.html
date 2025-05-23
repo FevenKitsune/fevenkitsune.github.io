@@ -1,63 +1,64 @@
+
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Feven Kitsune's development sandbox and homepage.">
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-    </style>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#889adf">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Roboto Mono', monospace;
-        }
-    </style>
-    <title>Clock | Feven Kitsune</title>
+    <link rel="stylesheet" href="../resources/css/index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/img/favicon-16x16.png">
+    <title>Feven Kitsune</title>
 </head>
+<body>
 
-<body class="w3-theme-dark">
-    <div class="w3-top">
-        <div class="w3-bar w3-light-grey">
-            <a href="/" class="w3-bar-item w3-button">Home</a>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">HTML Experiments</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button">Canvas Clock</a>
-                </div>
-            </div>
+<div class="container">
+	<div class="left-column">
 
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Fox Utilities</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="https://github.com/FevenKitsune/Fox-Utilities" class="w3-bar-item w3-button">GitHub</a>
-                    <a href="../fox-utilities/privacy-policy" class="w3-bar-item w3-button">Privacy Policy</a>
-                    <a href="../fox-utilities/terms-of-service" class="w3-bar-item w3-button">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="info-card">
+			<div class="avatar">
+				<img src="../resources/img/poof.jpg" alt="A profile picture of a fluffy fox-shaped ball." class="avatar-img">
+			</div>
+			<div class="nametag-socials">
+				<h1>WILL STEWART</h1>
+				<div class="social-container">
+					<a href="https://github.com/FevenKitsune" class="social-img"><img src="../resources/img/github-60x60.png"></a>
+					<a href="https://tech.lgbt/@fevenkitsune" class="social-img"><img src="../resources/img/mastodon-60x60.png"></a>
+					<a href="https://www.linkedin.com/in/william-stewart-22b012171/" class="social-img"><img src="../resources/img/linkedin-60x60.png"></a>
+				</div>
+			</div>
+		</div>
 
-    <div class="w3-display-container" style="height:100vh;" id="home">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <canvas id="test-canvas"></canvas>
-        </div>
-        <script type="text/javascript" src="resources/js/clock.js" async></script>
-    </div>
+		<!-- Hacky way to do a no-JS navbar accordion -->
+		<details>
+		<summary type="button" class="accordion nav-button dtb">Menu</summary>
+		<div class="navroot-content">
+			<a href="../index.html" class="nav-button indent-5">Home</a>
+
+			<details>
+			<summary type="button" class="accordion nav-button indent-5">HTML Experiments</summary>
+			<div class="navroot-content">
+				<a href="#" class="nav-button indent-10 nav-active">Canvas Clock</a>
+			</div>
+			</details>
+
+			<details>
+			<summary type="button" class="accordion nav-button indent-5">Fox Utilities</summary>
+			<div class="navroot-content">
+				<a href="https://github.com/FevenKitsune/Fox-Utilities" class="nav-button indent-10">GitHub</a>
+				<a href="../fox-utilities/privacy-policy.html" class="nav-button indent-10">Privacy Policy</a>
+				<a href="../fox-utilities/terms-of-service.html" class="nav-button indent-10">Terms of Service</a>
+			</div>
+			</details>
+		</div>
+		</details>
+	</div>
+
+	<div class="main-content">
+	    <canvas id="test-canvas"></canvas>
+	</div>
+</div>
+<script type="text/javascript" src="resources/js/clock.js" async></script>
+
 </body>
-
 </html>
