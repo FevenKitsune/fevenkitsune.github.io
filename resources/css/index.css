@@ -67,7 +67,8 @@ summary {
 .container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .left-column {
@@ -91,6 +92,7 @@ summary {
     background-color: var(--color-surface-a20);
     border-radius: 0 12px 12px 0;
     flex: 4;
+    flex-direction: column;
     margin: 6px 6px 6px 0;
     padding: 16px;
 }
@@ -196,6 +198,11 @@ summary {
     }
 
     .main-content {
+        border-radius: 0 0 12px 12px;
+        margin: 0px 6px 6px 6px;
+    }
+
+    .clock-main-content {
         border-radius: 0 0 12px 12px;
         margin: 0px 6px 6px 6px;
     }
