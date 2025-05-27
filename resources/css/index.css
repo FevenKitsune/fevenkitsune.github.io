@@ -91,17 +91,7 @@ summary {
     background-color: var(--color-surface-a20);
     border-radius: 0 12px 12px 0;
     flex: 4;
-    margin: 6px 6px 6px 0;
-    padding: 16px;
-}
-
-.clock-main-content {
-    background-color: var(--color-surface-a20);
-    border-radius: 0 12px 12px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 4;
+    flex-direction: column;
     margin: 6px 6px 6px 0;
     padding: 16px;
 }
