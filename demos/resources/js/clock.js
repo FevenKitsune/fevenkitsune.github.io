@@ -121,7 +121,7 @@ function draw() {
     ctx.translate(roverSeconds.positionX, roverSeconds.positionY);
 
     // Draw center point.
-    ctx.fillStyle = '#889adf';
+    ctx.fillStyle = '#afa3d7'; // Using --color-primary-a0
     ctx.beginPath();
     ctx.arc(0, 0, 10, 0, 2 * Math.PI);
     ctx.fill();
@@ -129,26 +129,26 @@ function draw() {
     // Draw roverSeconds.
     ctx.save();
     ctx.rotate(roverSeconds.angle * (Math.PI / 180));
-    ctx.fillStyle = '#B7313F';
+    ctx.fillStyle = '#cac1e4'; // Using --color-primary-a30
     ctx.fillRect(-roverSeconds.roverWidth / 2, -roverSeconds.roverLength, roverSeconds.roverWidth, roverSeconds.roverLength);
     ctx.restore();
 
     // Draw roverMinutes.
     ctx.save();
     ctx.rotate(roverMinutes.angle * (Math.PI / 180));
-    ctx.fillStyle = '#FFFF';
+    ctx.fillStyle = '#dbd5ed'; // Using --color-primary-a50
     ctx.fillRect(-roverMinutes.roverWidth / 2, -roverMinutes.roverLength, roverMinutes.roverWidth, roverMinutes.roverLength);
     ctx.restore();
 
     // Draw roverHours.
     ctx.save();
     ctx.rotate(roverHours.angle * (Math.PI / 180));
-    ctx.fillStyle = '#FFFF';
+    ctx.fillStyle = '#dbd5ed'; // Using --color-primary-a50
     ctx.fillRect(-roverHours.roverWidth / 2, -roverHours.roverLength, roverHours.roverWidth, roverHours.roverLength);
     ctx.restore();
 
     // Draw clock background.
-    ctx.strokeStyle = '#889adf';
+    ctx.strokeStyle = '#afa3d7'; // Using --color-primary-a0
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(0, 0, roverSeconds.roverLength + 10, 0, 2 * Math.PI);

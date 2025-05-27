@@ -95,6 +95,17 @@ summary {
     padding: 16px;
 }
 
+.clock-main-content {
+    background-color: var(--color-surface-a20);
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 4;
+    margin: 6px 6px 6px 0;
+    padding: 16px;
+}
+
 .info-card {
     border-radius: 12px;
     border-style: solid;
@@ -196,6 +207,11 @@ summary {
     }
 
     .main-content {
+        border-radius: 0 0 12px 12px;
+        margin: 0px 6px 6px 6px;
+    }
+
+    .clock-main-content {
         border-radius: 0 0 12px 12px;
         margin: 0px 6px 6px 6px;
     }
